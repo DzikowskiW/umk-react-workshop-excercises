@@ -1,0 +1,46 @@
+<!-- 
+    ZADANIE 1.
+    1. Napisz skrypt wpisujący dane weatherData w odpowiednie elementy DOM
+    2. Ostyluj wypisywaną datę oraz temperaturę, zeby była pogrubiona i pisana kursywą
+
+    Bonus:
+    1. Przenieś skrypt do funkcji head i spraw, zeby się odpowiednio wykonał
+
+    ściąga:
+    1. Podstawowy CSS (https://www.w3schools.com/css/css_text.asp)
+    2. Selektory CSS (https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors)
+    2. document.querySelector* (https://javascript.info/searching-elements-dom)
+ -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Zadanie 1</title>
+    <style>
+        /* miejsce na CSS */
+    </style>
+</head>
+
+<body>
+    <h1>Pogoda - <span class="js-city"></span></h1>
+    <div id="forecast">
+        <ul>
+            <li>Data: <span class="js-date"></span></li>
+            <li>Temperatura: <span class="js-temperature"></span></li>
+        </ul>
+    </div>
+</body>
+<script type="text/javascript">
+    const weatherData = {
+        city: 'Toruń',
+        date: '2019-12-06',
+        temperature: -2.0,
+    };
+
+    /* Miejsce na kod JS */
+</script>
+
+</html>

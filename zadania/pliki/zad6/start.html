@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Zadanie 6 - plik startowy</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <style>
+        .temperature-label {
+            font-size: 36px;
+        }
+
+        .weather-column.column {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="section">
+        <div class="container">
+            <div class="tile is-vertical is-6 notification is-info">
+                <h1 class="title">Toruń</h1>
+                <div class="columns is-vcentered">
+                    <div class="column weather-column">
+                        <img src="http://openweathermap.org/img/wn/04d@2x.png">
+                        <div class="temperature-label">2°C</div>
+                    </div>
+                    <div class="column">
+                        <ul>
+                            <li>Wilgotność: 78%</li>
+                            <li>Wiatr: 1.5 km/h</li>
+                            <li>Zachmurzenie: 75%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
