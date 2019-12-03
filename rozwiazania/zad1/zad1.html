@@ -1,0 +1,62 @@
+<!-- 
+    ZADANIE 1.
+    1. Napisz skrypt wpisujący dane weatherData w odpowiednie elementy DOM
+    2. Ostyluj datę oraz temperaturę, żeby była pogrubiona i pisana kursywą
+
+    Bonus:
+    1. Przenieś skrypt do tagu head i spraw, zeby się odpowiednio wykonał
+
+    ściąga:
+    1. Stylowanie tekstu w CSS (https://www.w3schools.com/css/css_text.asp)
+    2. Selektory CSS (https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors)
+    3. document.querySelector (https://javascript.info/searching-elements-dom)
+    4. element.innerHTML (https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML)
+
+    Wskazówki:
+    - Nie potrzebujesz serwera żeby uruchomić ten plik, wystarczy, że otworzysz go w przeglądarce
+ -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Zadanie 1</title>
+    <style>
+        /* miejsce na CSS */
+        .temperature, .date {
+            font-weight: bold;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Pogoda - <span class="location"></span></h1>
+    <div id="forecast">
+        <ul>
+            <li>Data: <span class="date"></span></li>
+            <li>Temperatura: <span class="temperature"></span></li>
+        </ul>
+    </div>
+</body>
+<script type="text/javascript">
+    const weatherData = {
+        location: 'Toruń',
+        date: '2019-12-06',
+        temperature: -2.0,
+    };
+
+    /* Miejsce na kod JS */
+    const locationEl = document.querySelector('.location');
+    const dateEl = document.querySelector('.date');
+    const tempEl = document.querySelector('.temperature');
+
+    locationEl.innerHTML = weatherData.location;
+    dateEl.innerHTML = weatherData.date;
+    tempEl.innerHTML = `${weatherData.temperature}°C`;
+
+</script>
+
+</html>

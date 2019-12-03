@@ -1,0 +1,58 @@
+<!-- 
+    ZADANIE 2.
+    Utwórz listę z informacją o dacie i temperaturze bezpośrednio w kodzie JavaScript i 
+    dodaj ją do elementu #forecast. 
+
+    Lista nie musi być dodatkowo ostylowana, elementy listy mogą być tekstowe
+    
+    ściąga:
+    https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction
+
+    Przydatne funkcje:
+    1. document.createElement()
+    2. document.createTextNode()
+    3. element.appendChild() 
+
+ -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Zadanie 2</title>
+</head>
+
+<body>
+    <h1>Pogoda - <span id="city">Toruń</span></h1>
+    <div id="forecast"></div>
+    <!-- 
+        <ul>
+            <li>Data: <span id="date">2019-12-06</span></li>
+            <li>Temperatura: <span id="temperature">-2.0°C</span></li>
+        </ul> 
+    -->
+</body>
+<script type="text/javascript">
+    const weatherData = {
+        city: 'Toruń',
+        date: '2019-12-06',
+        temperature: -2.0,
+    };
+
+    /* Miejsce na kod JS */
+    const dateEl = document.createElement('li');
+    const temperatureEl = document.createElement('li');
+    const listEl = document.createElement('ul');
+
+    dateEl.appendChild(document.createTextNode(`Data: ${weatherData.date}`));
+    temperatureEl.appendChild(document.createTextNode(`Temperatura: ${weatherData.temperature}°C`));
+
+    listEl.appendChild(dateEl);
+    listEl.appendChild(temperatureEl);
+
+    document.getElementById('forecast').appendChild(listEl);
+</script>
+
+</html>

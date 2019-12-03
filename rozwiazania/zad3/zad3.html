@@ -1,0 +1,53 @@
+<!-- 
+    ZADANIE 3.
+    Utwórz listę z informacją o dacie i temperaturze bezpośrednio w kodzie JavaScript i 
+    dodaj ją do elementu #forecast. Tym razem wykorzystaj:
+    React.createElement() - https://reactjs.org/docs/react-api.html#createelement
+    oraz
+    ReactDOM.render() - https://reactjs.org/docs/react-dom.html#render
+
+    ściąga:
+    https://reactjs.org/docs/react-without-jsx.html
+
+ -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Zadanie 3</title>
+</head>
+
+<body>
+    <h1>Pogoda - <span id="city">Toruń</span></h1>
+    <div id="forecast"></div>
+    <!-- 
+        <ul>
+            <li>Data: <span id="date">2019-12-06</span></li>
+            <li>Temperatura: <span id="temperature">-2.0°C</span></li>
+        </ul> 
+    -->
+
+</body>
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script type="text/javascript">
+    const weatherData = {
+        city: 'Toruń',
+        date: '2019-12-06',
+        temperature: -2.0,
+    };
+
+    /* Miejsce na kod JS */
+    ReactDOM.render(
+        React.createElement('ul', null, [
+            React.createElement('li', null, `Data: ${weatherData.date}`),
+            React.createElement('li', null, `Temperatura: ${weatherData.temperature}°C`),
+        ]),
+        document.getElementById('forecast'),
+    );
+</script>
+
+</html>
