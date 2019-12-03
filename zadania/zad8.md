@@ -1,25 +1,29 @@
 # Zadanie 8. Wypisywanie danych z API
 
-Celem zadania jest podpięcie API Open Weather do aplikacji i pobieranie prognozy pogody z internetu.
+Celem zadania jest podpięcie API Open Weather do aplikacji i pobieranie prognozy pogody z zewnętrznej usługi.
 
 
-1. Skopiuj katalog `services/` do folderu `src` swojej aplikacji. W środku jest moduł `open-weather.js` 
-    zwracający statyczne dane.
+1. Skopiuj katalog `pliki/zad8/services/` do folderu `src` swojej aplikacji. W środku jest moduł `open-weather.js`
+    zwracający statyczne dane pogodowe.
 
-## A. Wyświetlanie danych asynchronicznych
-2. Dane synchroniczne: W komponencie `App.jsx` zaimportuj funkcję `getWeatherSync` z modułu `open-weather.js` 
+## A. Stan w komponencie
+2. Dane synchroniczne: W komponencie `App.jsx` zaimportuj funkcję `fetchWeatherSync` z modułu `open-weather.js` 
     i wyświetlaj zwracane dane pogodowe w widoku aplikacji zamiast dotychczasowych. Do osiągnięcia tego 
     nie potrzebujesz modyfikować innych plików niz `App.jsx`. Upewnij się, ze dane wyświetlane są prawidłowo.
-3. W komponencie `App.jsx` zaimportuj funkcję `getWeather` z modułu `open-weather.js` i wyświetlaj zwracane dane pogodowe 
-    w widoku aplikacji zamiast dotychczasowych. Wykorzystaj do tego mechanizm async/await. Upewnij się, ze dane wyświetlane 
-    są prawidłowo.
+3. Zamień komponent App z funkcyjnego na klasowy, ponieważ będzie on przechowywał stan - prognozę pogody
+4. Dodaj stan w komponencie App, w którym będą przechowywane dane pogodowe
+5. Dane asynchroniczne: W komponencie `App.jsx` zaimportuj funkcję `fetchWeather` z modułu `open-weather.js` i wyświetlaj zwracane dane pogodowe 
+    w widoku aplikacji zamiast dotychczasowych z `fetchWeatherSync`. Wykorzystaj do tego mechanizm async/await oraz metodę `componentDidMount`.
+    Upewnij się, ze dane wyświetlane są prawidłowo.
 
 ## B. Pobieranie danych z API:
-4. Wpisz swój klucz API z openweathermap.org w zmienną API_KEY
-5. Usuń środek funkcji `getWeather` i napisz implementację która będzie zwracała dane z Open Weather w formacie JSON
+6. Wpisz swój klucz API z openweathermap.org w zmienną API_KEY
+7. Usuń środek funkcji `fetchWeather` i napisz implementację która będzie zwracała dane z Open Weather w formacie JSON
     a. Wykorzystaj fetch API do pobrania danych
     b. URL do którego ma być wysłane ządanie jest w zmiennej API_URL
-6. Upewnij się, ze w widoku pojawiają się odpowiednie dane
+    c. skonweruj pobrane dane na obiekty javascriptowe wykorzystując metodę `.json()`
+    d. wykorzystaj istniejącą funkcję `mapOpenWeatherToDomainModel` do przemapowania obiektu na format przyjmowany w komponencie App
+    e. Upewnij się, że w widoku pojawiają się odpowiednie dane 
 
 # Bonus
 1. Dodaj informację o pobieraniu danych w widoku, jeśli dane nie zostały jeszcz pobrane z serwera
@@ -28,7 +32,5 @@ Celem zadania jest podpięcie API Open Weather do aplikacji i pobieranie prognoz
 # ściąga
 - async/await https://javascript.info/async-await
 - fetch https://javascript.info/fetch
-- Promise https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261
-
-# Wskazówki
-- Po pobraniu danych z sewera pamiętaj, zeby zamienić je na obiekty javascriptowe wykorzystując `request.json()`
+- React Zarządzanie Stanem + zamienianie komponentu z funkcyjnego na klasowy
+    \+ akcje na załadowanie się komponentu (https://reactjs.org/docs/state-and-lifecycle.html)
