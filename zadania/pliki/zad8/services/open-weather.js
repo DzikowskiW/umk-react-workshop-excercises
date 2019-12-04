@@ -5,7 +5,7 @@ async function fetchWeather() {
     return Promise((resolve)  => {
         resolve({
             city: 'Warszawa',
-            temperature: 6.0,ś
+            temperature: 6.0,
             humidity: 60,
             windSpeed: 12,
             cloudiness: 88,
