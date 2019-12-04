@@ -2,7 +2,7 @@ const API_KEY = 'WKLEJ KLUCZ API DO OPEN WEATHER MAP TUTAJ';
 const API_URL = `https://api.openweathermap.org/data/2.5/weather?appid=${API_KEY}&units=metric&q=Torun,pl`
 
 async function fetchWeather() {
-    return Promise((resolve)  => {
+    return new Promise((resolve)  => {
         resolve({
             city: 'Warszawa',
             temperature: 6.0,
